@@ -8,6 +8,9 @@ Bundler.require(*Rails.groups)
 
 module Mocs
   class Application < Rails::Application
+
+    require 'rails/all'
+    require 'dotenv' ; Dotenv.load ".env.local", ".env.#{Rails.env}"
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
