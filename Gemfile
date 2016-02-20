@@ -28,6 +28,7 @@ gem 'bootstrap-sass'
 
 gem 'dotenv-rails', :require => 'dotenv/rails-now'
 gem 'omniauth-facebook'
+gem 'omniauth-github'
 
 
 
