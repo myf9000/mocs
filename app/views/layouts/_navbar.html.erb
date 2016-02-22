@@ -1,0 +1,21 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <%= link_to image_tag('logo.png'), root_path %>
+    </div>
+    <div id="navbar">
+      <% if current_user %>
+        <ul class="nav navbar-nav pull-right">
+          <li class="nav_img">
+            <li class="active"><a href="orders">Orders <span class="badge badge-primary">42</span></a></li>
+          <li><%= link_to logout_path, method: :delete do%>Log out <em class="fa fa-sign-out"></em><%end%></li>
+        </ul>
+      <% else %>
+        <ul class="nav navbar-nav">
+          <li><%= link_to 'Facebook', '/auth/facebook' %></li>
+          <li><%= link_to 'Github', '/auth/github' %></li>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+</nav>

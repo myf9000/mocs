@@ -1,43 +1,21 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Mocs</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>Mocs</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/flatly/bootstrap.min.css" rel="stylesheet" integrity="sha256-sHwgyDk4CGNYom267UJX364ewnY4Bh55d53pxP5WDug= sha512-mkkeSf+MM3dyMWg3k9hcAttl7IVHe2BA1o/5xKLl4kBaP0bih7Mzz/DBy4y6cNZCHtE2tPgYBYH/KtEjOQYKxA==" crossorigin="anonymous">
+    <%= stylesheet_link_tag "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class="top_fix" %>
+      <div class="container">
+        <%= render 'layouts/navbar' %>
+        <%= render 'layouts/alerts' %>
 
-<nav class="navbar navbar-inverse">
-  <div class="container">
-    <div class="navbar-header">
-      <%= link_to 'MOCS', root_path, class: 'navbar-brand' %>
+        <%= yield %>
+      </div>
     </div>
-    <div id="navbar">
-      <% if current_user %>
-        <ul class="nav navbar-nav pull-right">
-          <li><%= image_tag current_user.image_url, alt: current_user.name %></li>
-          <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
-        </ul>
-      <% else %>
-        <ul class="nav navbar-nav">
-          <li><%= link_to 'Facebook', '/auth/facebook' %></li>
-          <li><%= link_to 'Github', '/auth/github' %></li>
-        </ul>
-      <% end %>
-    </div>
-  </div>
-</nav>
-
-<div class="container">
-  <% flash.each do |key, value| %>
-    <div class="alert alert-<%= key %>">
-      <%= value %>
-    </div>
-  <% end %>
-
-  <%= yield %>
-</div>
-
-</body>
+  </body>
 </html>

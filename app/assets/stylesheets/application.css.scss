@@ -14,7 +14,20 @@
  *= require_self
  */
 
-@import "bootstrap-sprockets";
-@import "bootstrap";
-@import 'bootstrap/theme';
+.top_fix{
+  margin-top: 80px;
+}
 
+.text_center {
+	text-align: center;
+}
+
+.food_img{
+	width: auto; 
+  height: 220px;
+  border-radius: 2px 2px 2px 2px;
+}
+
+.alert {
+  margin-top: 0.65cm;
+}
