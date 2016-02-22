@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
+  resources :meals, only: 'index', defaults: {format: :json} 
   root to: 'meals#index'
-
-  get 'meals/index'
+  
   get 'orders/index', as: 'orders'
 
   get 'sessions/create'
